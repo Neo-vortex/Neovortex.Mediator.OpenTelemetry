@@ -50,9 +50,6 @@ builder.Services.AddMediatorOpenTelemetry(options =>
         activity.SetTag("response.value", response?.ToString());
     };
 
-    // Customize ActivitySource and Meter names
-    options.ActivitySourceFactory = () => new ActivitySource("MyCustomMediator", "2.0.0");
-    options.MeterFactory = () => new Meter("MyCustomMediator", "2.0.0");
 });
 ```
 
