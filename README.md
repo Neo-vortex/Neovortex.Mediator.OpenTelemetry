@@ -83,10 +83,7 @@ var result = await mediator.Send(new Ping());
 | `EnrichActivity`             | `Action<Activity?, object, TagList>` | Add custom tags to activities.                      |
 | `RecordResponseData`         | `bool`                               | Record response data in activities.                 |
 | `EnrichActivityWithResponse` | `Action<Activity, object?>`          | Enrich activities with response details.            |
-| `ActivitySourceFactory`      | `Func<ActivitySource>`               | Customize the ActivitySource.                       |
-| `MeterFactory`               | `Func<Meter>`                        | Customize the Meter.                                |
-| `MessageDurationFactory`     | `Func<Meter, Histogram<double>>`     | Customize duration histogram.                       |
-| `MessageCountFactory`        | `Func<Meter, Counter<long>>`         | Customize message counter.                          |
+
 
 ---
 
