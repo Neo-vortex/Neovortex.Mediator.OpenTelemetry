@@ -70,18 +70,50 @@ builder.Services.AddOpenTelemetry()
 
 ```csharp
 // Example: Sending a Mediator request
-public class Ping : IRequest<string> {}
-
-public class PingHandler : IRequestHandler<Ping, string>
+public class TestQuery(int testParam) : IRequest<string>
 {
-    public Task<string> Handle(Ping request, CancellationToken cancellationToken)
+    public int TestParam { get; } = testParam;
+}
+
+public class TestQueryHandler : IRequestHandler<TestQuery, string>
+{
+    public async ValueTask<string> Handle(TestQuery request, CancellationToken cancellationToken)
     {
-        return Task.FromResult("Pong");
+        await Task.Delay(100, cancellationToken);
+        return ((request.TestParam * 2).ToString());
     }
 }
 
 // Somewhere in your controller or service
 var result = await mediator.Send(new Ping());
+```
+
+Here is what you should see
+
+```
+Activity.TraceId:            936c2ef35ac1dda276c68f15f958d17f
+Activity.SpanId:             89d9d3be42f883f7
+Activity.TraceFlags:         Recorded
+Activity.ParentSpanId:       f177be942bd46a02
+Activity.DisplayName:        TestQuery
+Activity.Kind:               Internal
+Activity.StartTime:          2025-11-24T13:29:26.2257521Z
+Activity.Duration:           00:00:00.1034930
+Activity.Tags:
+    messaging.system: mediator
+    messaging.operation: process
+    messaging.time.duration: 102
+    messaging.operation.status: success
+    result: 20
+StatusCode: Ok
+Instrumentation scope (ActivitySource):
+    Name: Microsoft.AspNetCore
+Resource associated with Activity:
+    service.name: MyCompanyAPI
+    service.instance.id: 76b25550-2214-4f09-b484-a13b1567829e
+    telemetry.sdk.name: opentelemetry
+    telemetry.sdk.language: dotnet
+    telemetry.sdk.version: 1.14.0
 ```
 
 ---
