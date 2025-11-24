@@ -11,7 +11,7 @@ This library provides an easy way to instrument [Mediator](https://github.com/ma
 * Automatic tracing of Mediator requests.
 * Filter messages to exclude certain types.
 * Optionally record response data.
-* Works with ASP.NET Core and any .NET 10+ project.
+* Works with ASP.NET Core and any netstandard2
 
 ---
 
