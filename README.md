@@ -88,9 +88,6 @@ var result = await mediator.Send(new Ping());
 ---
 
 ## Use Cases
-
-* Track performance and duration of Mediator requests.
-* Monitor success/failure rates of messages.
 * Integrate with observability platforms (e.g., Jaeger, Prometheus, OpenTelemetry Collector).
 * Easily customize instrumentation per project needs.
 
