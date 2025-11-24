@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Neovortex.Mediator.OpenTelemetry</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Neovortex</Authors>
+        <Description>OpenTelemetry instrumentation for Mediator — tracing + metrics (count, duration, failed, concurrent)</Description>
+        <PackageTags>mediator;opentelemetry;tracing;metrics;observability;cqrs</PackageTags>
+        <RepositoryUrl>https://github.com/neovortex/Neovortex.Mediator.OpenTelemetry</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Mediator.Abstractions" Version="3.0.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.0" />
+        <PackageReference Include="OpenTelemetry" Version="1.14.0" />
+        <PackageReference Include="OpenTelemetry.Api" Version="1.14.0" />
+        <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.14.0" />
+        <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.14.0" />
+        <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.14.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+
+    </ItemGroup>
+
+</Project>

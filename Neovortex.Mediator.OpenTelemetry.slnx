@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Neovortex.Mediator.OpenTelemetry/Neovortex.Mediator.OpenTelemetry.csproj" />
+  </Folder>
+</Solution>
