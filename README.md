@@ -109,7 +109,7 @@ StatusCode: Ok
 Instrumentation scope (ActivitySource):
     Name: Microsoft.AspNetCore
 Resource associated with Activity:
-    service.name: MyCompanyAPI
+    service.name: MyAPI
     service.instance.id: 76b25550-2214-4f09-b484-a13b1567829e
     telemetry.sdk.name: opentelemetry
     telemetry.sdk.language: dotnet
