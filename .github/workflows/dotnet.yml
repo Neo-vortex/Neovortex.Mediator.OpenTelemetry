@@ -50,7 +50,7 @@ jobs:
       run: dotnet build --no-restore --configuration Release
 
     - name: Pack NuGet
-      run: dotnet pack ./src/Neovortex.Mediator.OpenTelemetry.csproj --configuration Release --output ./nupkg /p:PackageVersion=1.0.4
+      run: dotnet pack ./src/Neovortex.Mediator.OpenTelemetry/Neovortex.Mediator.OpenTelemetry.csproj --configuration Release --output ./nupkg /p:PackageVersion=1.0.4
 
     - name: Publish NuGet
       run: dotnet nuget push ./nupkg/*.nupkg \
