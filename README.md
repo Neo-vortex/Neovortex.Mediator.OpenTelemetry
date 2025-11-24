@@ -51,6 +51,17 @@ builder.Services.AddMediatorOpenTelemetry(options =>
     };
 
 });
+
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(r => r.AddService("MyAPI"))
+    .WithTracing(t => t
+        .SetSampler(new AlwaysOnSampler())
+        .AddAspNetCoreInstrumentation()
+        .AddMediatorInstrumentation()  // Adds source "Mediator"
+        .AddConsoleExporter())
+    .WithMetrics(m => m
+        .AddAspNetCoreInstrumentation()
+        .AddConsoleExporter());
 ```
 
 ---
