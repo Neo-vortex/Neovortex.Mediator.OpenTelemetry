@@ -85,7 +85,7 @@ public class TestQueryHandler : IRequestHandler<TestQuery, string>
 }
 
 // Somewhere in your controller or service
-var result = await mediator.Send(new Ping());
+var result = await mediator.Send(new TestQuery(10));
 ```
 
 Here is what you should see
